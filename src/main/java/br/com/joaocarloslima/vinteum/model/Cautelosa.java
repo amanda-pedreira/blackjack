@@ -5,11 +5,15 @@ public class Cautelosa implements EstiloDeJogo {
 
     @Override
     public String getNome() {
-        return null;
+        return "Cautelosa";
     }
 
     @Override
     public boolean querCarta(Mao mao) {
-        return false;
+        if (mao.getPontos() < 15) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }

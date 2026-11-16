@@ -7,10 +7,15 @@ public class Mesa extends Participante {
 
     @Override
     public boolean querCarta() {
-        return false;
+        if (parou() == false && estourou() == false) {
+            return estilo.querCarta(getMao());
+        } else {
+            return false;
+        }
     }
 
     public void setEstilo(EstiloDeJogo estilo) {
+        this.estilo = estilo;
     }
 
     public EstiloDeJogo getEstilo() {

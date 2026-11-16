@@ -9,14 +9,38 @@ public class Mao {
     private List<Carta> cartas = new ArrayList<>();
 
     public void adicionar(Carta carta) {
+        cartas.add(carta);
     }
 
     public int getPontos() {
-        return 0;
+        int pontos = 0;
+        int ases = 0;
+
+        for (int i = 0; i < cartas.size(); i++) {
+            Carta carta = cartas.get(i);
+
+            pontos = pontos + carta.getValor();
+
+            if (carta.getNumero() == 1) {
+                ases++;
+            }
+        }
+
+        for (int i = 0; i < ases; i++) {
+            if (pontos + 10 <= 21) {
+                pontos = pontos + 10;
+            }
+        }
+
+        return pontos;
     }
 
     public boolean estourou() {
-        return false;
+        if (getPontos() > 21) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public List<Carta> getCartas() {

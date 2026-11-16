@@ -5,6 +5,10 @@ public class Jogador extends Participante {
 
     @Override
     public boolean querCarta() {
-        return false;
+        if (parou() == false && estourou() == false) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }

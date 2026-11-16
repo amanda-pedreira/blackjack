@@ -5,11 +5,15 @@ public class Arriscada implements EstiloDeJogo {
 
     @Override
     public String getNome() {
-        return null;
+        return "Arriscada";
     }
 
     @Override
     public boolean querCarta(Mao mao) {
-        return false;
+        if (mao.getPontos() < 19) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }
